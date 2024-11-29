@@ -10,12 +10,13 @@ to_learn = data.to_dict(orient="records")
 current_card={}
 
 def next_card():
-    global current_card
+    global current_card, flip_timer
+    window.after_cancel(flip_timer)
     current_card = random.choice(to_learn)
     canvas.itemconfig(card_title, text = "French",fill="black")
     canvas.itemconfig(card_word, text = current_card["French"],fill="black")
     canvas.itemconfig(card_background,image = card_front_image)
-    window.after(3000, func=flip_card)
+    flip_timer = window.after(3000, func=flip_card)
 
 
 def flip_card():
@@ -26,6 +27,8 @@ def flip_card():
 window= Tk()
 window.title("Flash Card")
 window.config(bg = BACKGROUND_COLOR, padx = 50, pady = 50)
+
+flip_timer = window.after(3000, func=flip_card)
 
 right_image = PhotoImage(file ="images/right.png")
 wrong_image = PhotoImage(file="images/wrong.png")
