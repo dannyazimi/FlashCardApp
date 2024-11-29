@@ -45,8 +45,9 @@ This is a Python-based flashcard app that helps users learn using flash cards. T
 
 4. **Audio Pronunciation**: Play audio for the displayed words to improve pronunciation.
 
-5**Mobile Version**:
+5. **Mobile Version**:
    - Build a mobile-friendly version.
+6. Add Pomodoro
 
 ## Known Limitations
 
